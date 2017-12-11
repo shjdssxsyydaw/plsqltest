@@ -44,19 +44,24 @@ VALUES(68,'L2 B',67);
 INSERT INTO hierarchy_16_2 
 VALUES(69,'no root fath 69',NULL);
 
-select 
-emp_id,position,boss,
-level,
-sys_connect_by_path(position,'/'),sys_connect_by_path(emp_id,'-'),sys_connect_by_path(boss,'/'),
-connect_by_root(position),connect_by_root(emp_id),connect_by_root(boss)
-from 
-p155121.hierarchy_16 
-start with emp_id = 20
-connect by prior emp_id = boss and emp_id <>23
-order  siblings  by  position
-;
-select * from  p155121.t
-connect by emp_id = boss
-start with emp_id =20
-connect by  prior emp_id =  boss
-;
+SELECT emp_id,
+       position,
+       boss,
+       LEVEL,
+       sys_connect_by_path(position, '/'),
+       sys_connect_by_path(emp_id, '-'),
+       sys_connect_by_path(boss, '/'),
+       connect_by_root(position),
+       connect_by_root(emp_id),
+       connect_by_root(boss)
+  FROM hierarchy_16
+ START WITH emp_id = 20
+CONNECT BY PRIOR emp_id = boss
+       AND emp_id <> 23
+ ORDER SIBLINGS BY position;
+ 
+SELECT *
+  FROM hierarchy_16_2
+CONNECT BY emp_id = boss
+ START WITH emp_id = 20
+CONNECT BY PRIOR emp_id = boss;
