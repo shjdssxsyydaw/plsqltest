@@ -9,39 +9,39 @@ CREATE TABLE hierarchy_16_2
     position                       NVARCHAR2(255),
     boss                           NUMBER)
 ;
-INSERT INTO p155121.hierarchy_16 
+INSERT INTO hierarchy_16 
 VALUES(20,'CEO',NULL);
-INSERT INTO p155121.hierarchy_16 
+INSERT INTO hierarchy_16 
 VALUES(22,'Dept manager IT',20);
-INSERT INTO p155121.hierarchy_16 
+INSERT INTO hierarchy_16 
 VALUES(23,'Dept Manager FI',20);
-INSERT INTO p155121.hierarchy_16 
+INSERT INTO hierarchy_16 
 VALUES(24,'Team manager 1',22);
-INSERT INTO p155121.hierarchy_16 
+INSERT INTO hierarchy_16 
 VALUES(40,'FI account',23);
-INSERT INTO p155121.hierarchy_16 
+INSERT INTO hierarchy_16 
 VALUES(41,'Dept Manager HR',20);
-INSERT INTO p155121.hierarchy_16 
+INSERT INTO hierarchy_16 
 VALUES(43,'Hr assistant',41);
-INSERT INTO p155121.hierarchy_16 
+INSERT INTO hierarchy_16 
 VALUES(62,'IT consultant',24);
-INSERT INTO p155121.hierarchy_16 
+INSERT INTO hierarchy_16 
 VALUES(65,'IT consultant 2',24);
-INSERT INTO p155121.hierarchy_16 
+INSERT INTO hierarchy_16 
 VALUES(66,'FI consultant',40);
-INSERT INTO p155121.hierarchy_16 
+INSERT INTO hierarchy_16 
 VALUES(69,'no root fath 69',NULL);
 
 ---
-INSERT INTO p155121.t 
+INSERT INTO hierarchy_16_2 
 VALUES(20,'CEO',NULL);
-INSERT INTO p155121.t 
+INSERT INTO hierarchy_16_2
 VALUES(66,'L1 A',20);
-INSERT INTO p155121.t 
+INSERT INTO hierarchy_16_2 
 VALUES(67,'L1 B',20);
-INSERT INTO p155121.t 
+INSERT INTO hierarchy_16_2 
 VALUES(68,'L2 B',67);
-INSERT INTO p155121.t 
+INSERT INTO hierarchy_16_2 
 VALUES(69,'no root fath 69',NULL);
 
 select 
